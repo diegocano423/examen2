@@ -1,9 +1,11 @@
 <?php
+require("app/src/controllers/CreateController.php");
 $metodo = $_SERVER['REQUEST_METHOD'];
 if ($metodo == 'POST') {
     $listaDeParametrosEnElCuerpo = file_get_contents('php://input');;
     echo "es POST";
-    var_dump($listaDeParametrosEnElCuerpo);
+    $createController = new CreateController();
+    $result = $createController->create($request);
 }
 if ($metodo == 'GET') {
     $listaDeParametrosEnElURL = $_GET;

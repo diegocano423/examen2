@@ -3,18 +3,18 @@
 namespace App\Services;
 
 public function get () {
-    $ressultData = [];
+    $resultData = [];
     $query = "SELECT * FROM videogames";
     $params = [];
         
-    $result = $this->storage->query($query, $params);
+    $resultData = $this->storage->query($query, $params);
         
-    if (count($result['data']) > 0) {
-        return $result['data'];
+    if (count($resultData['data']) > 0) {
+        return $resultData['data'];
     } else {
-        $result["message"] = "We don't have games at this moment.";
-        $result["error"] = true;
+        $resultData["message"] = "We don't have games at this moment.";
+        $resultData["error"] = true;
     }
         
-    return $result;
+    return $resultData;
 }
