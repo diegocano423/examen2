@@ -2,8 +2,12 @@
 
 use App\Services\ListService;
 
-public function get () {
-        $result = $this->ListService->get();
-        
-        return $result;
+class ListController {
+	private $ListService;
+
+	public function get () {
+	        $result = $this->ListService->get();
+	        
+	        return $result;
+	}
 }

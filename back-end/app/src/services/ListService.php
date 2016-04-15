@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class ListaService {
+class ListService {
     public function get () {
         $data = [];
         $query = "SELECT * FROM videogames";
