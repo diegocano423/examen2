@@ -3,7 +3,7 @@
 use App\Services\ListService;
 
 public function get () {
-        $result = $this->ListService->get();
+    $result = $this->ListService->get();
         
-        return $result;
+    return $result;
 }
