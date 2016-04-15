@@ -2,19 +2,21 @@
 
 namespace App\Services;
 
-public function get () {
-    $resultData = [];
-    $query = "SELECT * FROM videogames";
-    $params = [];
-        
-    $resultData = $this->storage->query($query, $params);
-        
-    if (count($resultData['data']) > 0) {
-        return $resultData['data'];
-    } else {
-        $resultData["message"] = "We don't have games at this moment.";
-        $resultData["error"] = true;
+class ListService {
+    public function get () {
+        $data = [];
+        $query = "SELECT * FROM videogames";
+        $params = [];
+            
+        $result = $this->storage->query($query, $params);
+            
+        if (count($result['data']) > 0) {
+            return $result['data'];
+        } else {
+            $result["message"] = "We don't have games at this moment.";
+            $result["error"] = true;
+        }
+            
+        return $result;
     }
-        
-    return $resultData;
 }
