@@ -12,7 +12,7 @@ Class CreateService {
         }
     }
 
-    public function create ($id, $title, $developer, $description, $console, $date, $calification, $urlImage) {
+    public function create ($id, $title, $developer, $description, $console, $releaseDate, $calification, $urlImage) {
     	$result = [];
 
     	if ($id) {
@@ -23,14 +23,14 @@ Class CreateService {
     						if ($date) {
     							if ($calification) {
     							    if (strlen(trim($url_image) > 0) {
-    							    	$create_query = "INSERT INTO videogames (id, titulo, desarrollador, descripcion, consola, fechaLanzamiento, calificacion, urlImagen) VALUES (:id, :title, :developer, :description, :console, :date, :calification, :urlImage)";
+    							    	$create_query = "INSERT INTO videogames (id, titulo, desarrollador, descripcion, consola, fechaLanzamiento, calificacion, urlImagen) VALUES (:id, :title, :developer, :description, :console, :releaseDate, :calification, :urlImage)";
     							    	$create_params = [
     							    	    ":id" => $id,
     							    	    ":title" => $title,
     							    	    ":developer" => $developer,
     							    	    ":description" => $description,
     							    	    ":console" => $console,
-    							    	    ":date" => $date,
+    							    	    ":releaseDate" => $releaseDate,
     							    	    ":calification" => $calification,
     							    	    ":url_image" =>  $urlImage
     							    	];

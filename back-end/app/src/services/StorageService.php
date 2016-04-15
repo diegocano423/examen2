@@ -44,27 +44,7 @@ class StorageService {
 
         return $result;
     }
-    public function query_row($query, $params=[]) {
-        $result = [
-            'data' => null,
-        ];
-
-        try {
-            $stmt = $this->pdo->prepare($query);
-
-            $stmt->execute($params);
-
-            while ($content = $stmt->rowCount(PDO::FETCH_ASSOC)) {
-                $result['data'] = $content;
-            }
-        } catch (PDOException $e) {
-            $result['error'] = true;
-            $result['message'] = $e->getMessage();
-        }
-
-        return $result;
-    }
-
+    
     public function query_update($query, $params=[]) {
         $result = [
             'data' => null,

@@ -1,7 +1,6 @@
-<?php 
+<?php
 
 namespace App\Controllers;
-
 use App\Services\CreateService;
 use Slim\Http\Request;
 
@@ -12,7 +11,7 @@ class CreateController {
         $this->CreateService = new CreateService();
     }
 
-    public function create (){
+    public function create ($request){
     	$result = [];
         $data = $request->getParsedBody();
 
